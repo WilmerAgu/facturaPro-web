@@ -1,18 +1,135 @@
+import { useState } from 'react';
+import { Link } from 'react-router-dom'; 
+import './Home.css';
 
 const Home = () => {
-    return (
-    <section>
-    
-        <h1>App Recipes</h1>
-        <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio ratione dolorem maxime neque voluptatibus adipisci, unde rem omnis, tempore dignissimos id, ea consectetur assumenda minus numquam error modi qui dolores?
-            Pariatur deleniti accusantium consequuntur animi maiores porro et expedita tempora magni earum, excepturi repudiandae praesentium molestiae culpa labore, asperiores rerum vero. Praesentium amet repudiandae dolore quis fuga ipsum aut ratione!
-            Expedita, ullam, consectetur nam aliquid sit dolore error quidem nostrum ipsam facilis sint dolorum, officia labore voluptates enim nobis. Sit maxime eligendi id corporis explicabo corrupti iste, cupiditate ab unde!
-            Nesciunt quos placeat distinctio accusantium quo quidem earum quam officia natus doloremque in tempora, laboriosam fugit harum rerum quia sunt aliquam repudiandae dolorem nostrum error tenetur voluptates dolorum nam. Modi!
-            Quam error cum, debitis eligendi nulla corporis sit doloribus quaerat vitae fugiat omnis vel dolores est nobis qui. Ut tempore delectus saepe ipsa amet dolores velit laboriosam ipsam debitis accusamus?
-        </p>
-    </section>
-    )
-}
+    const [factura, setFactura] = useState({
+        numero: '',
+        monto: '',
+        categoria: '',
+        fecha: '',
+        vendedor: '',
+        ciudad: ''
+    });
 
-export default Home
+    const handleChange = (e) => {
+        setFactura({ ...factura, [e.target.name]: e.target.value });
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log('Factura registrada:', factura);
+        alert('Factura registrada con éxito');
+    };
+
+    return (
+        <div className="factura-pro">
+            <aside className="sidebar">
+                <section className="admin-icon">
+                    <img src="public\img\loginPro.jpeg" alt="Profile Icon" className="login" />
+                </section>
+                <p>Administrador</p>
+                <nav>
+                    <ul>
+                        <li>
+                            <Link to="/facturapro">Registro de Facturas</Link>
+                        </li>
+                        <li>
+                            <Link to="/registro">Control de Gastos</Link>
+                        </li>
+                        <li>
+                            <Link to="/Egresos">Reportes Financieros</Link>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <main className="main-content">
+                <h1>Registros de Factura</h1>
+                <section className="form-container">
+                    <form onSubmit={handleSubmit}>
+                        <label>
+                            Factura N° 
+                            <input
+                                type="text"
+                                name="numero"
+                                value={factura.numero}
+                                onChange={handleChange}
+                                required
+                            />
+                        </label>
+                        <label>
+                            Monto:
+                            <input
+                                type="number"
+                                name="monto"
+                                value={factura.monto}
+                                onChange={handleChange}
+                                required
+                            />
+                        </label>
+                        <label>
+                            Categoría:
+                            <input
+                                type="text"
+                                name="categoria"
+                                value={factura.categoria}
+                                onChange={handleChange}
+                                required
+                            />
+                        </label>
+                        <label>
+                            Vendedor:
+                            <input
+                                type="text"
+                                name="vendedor"
+                                value={factura.vendedor}
+                                onChange={handleChange}
+                                required
+                            />
+                        </label>
+                        <label>
+                            Ciudad:
+                            <input
+                                type="text"
+                                name="ciudad"
+                                value={factura.ciudad}
+                                onChange={handleChange}
+                                required
+                            />
+                        </label>
+                        <label>
+                            Fecha:
+                            <input
+                                type="date"
+                                name="fecha"
+                                value={factura.fecha}
+                                onChange={handleChange}
+                                required
+                            />
+                        </label>
+                        <section className="button-group">
+                            <button type="submit" className="register-btn">Registrar</button>
+                            <button 
+                                type="button" 
+                                className="cancel-btn" 
+                                onClick={() => setFactura({
+                                    numero: '',
+                                    monto: '',
+                                    categoria: '',
+                                    fecha: '',
+                                    vendedor: '',
+                                    ciudad: ''
+                                })}
+                            >
+                                Cancelar
+                            </button>
+                        </section>
+                    </form>
+                </section>
+            </main>
+        </div>
+    );
+};
+
+export default Home;
