@@ -10,16 +10,16 @@ import './pages/Home.css';
 
 let router = createBrowserRouter([
   {
+    path: '/',
+    element: <Home />
+  },
+  {
     path: '/login',
-    element: <Login />
+    element: <Login />,
   },
   {
     path: '/register',
     element: <Register />
-  },
-  {
-    path: '/',
-    element: <Home />
   }
 ])
 
