@@ -1,3 +1,4 @@
+
 import React from "react";
 import './Egresos.css';
 
@@ -51,6 +52,7 @@ const Egresos = () => {
             </main>
         </div>
     );
+
 };
 
 export default Egresos;

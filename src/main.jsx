@@ -12,21 +12,19 @@ import Egresos from './pages/Egresos'
 
 let router = createBrowserRouter([
   {
-    path: '/login',
-    element: <Login />
-  },
-  {
-    path: '/register',
-    element: <Register />
-  },
-  {
     path: '/',
     element: <Home />
   },
   {
-    path: '/Egresos',
-    element: <Egresos />
+    path: '/login',
+    element: <Login />,
+  },
+  {
+    path: '/register',
+    element: <Register />
+  
   }
+
 ])
 
 

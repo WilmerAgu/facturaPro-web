@@ -8,8 +8,10 @@ const Login = () => {
 
     const handleLogin = () => {
         if (email === 'facturapro@gmail.com' && password === 'factura123') {
-            // Redirigir o hacer algo si las credenciales son correctas
+            // Mostrar alerta de inicio de sesión exitoso
             alert('Inicio de sesión exitoso');
+            // Redirigir a la página registro.json
+            window.location.href = '/Register.jsx';
         } else {
             // Mostrar mensaje de error si las credenciales no coinciden
             setErrorMessage('Correo o contraseña incorrectos');
@@ -47,3 +49,4 @@ const Login = () => {
 };
 
 export default Login;
+
