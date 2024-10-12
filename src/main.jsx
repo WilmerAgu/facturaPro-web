@@ -5,7 +5,7 @@ import './index.css'
 import './pages/Egresos.css'
 
 import Login from './pages/auth/Login'
-import Register from './pages/auth/Register'
+import Egresos from './pages/Egresos'
 import Home from './pages/Home'
 import './pages/Home.css'
 
@@ -19,8 +19,8 @@ let router = createBrowserRouter([
     element: <Login />,
   },
   {
-    path: '/register',
-    element: <Register />
+    path: '/Egresos',
+    element: <Egresos />
   
   }
 

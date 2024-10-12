@@ -11,7 +11,7 @@ const Login = () => {
             // Mostrar alerta de inicio de sesión exitoso
             alert('Inicio de sesión exitoso');
             // Redirigir a la página registro.json
-            window.location.href = '/Register.jsx';
+            window.location.href = './Egresos.jsx';
         } else {
             // Mostrar mensaje de error si las credenciales no coinciden
             setErrorMessage('Correo o contraseña incorrectos');
