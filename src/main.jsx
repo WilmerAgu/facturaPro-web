@@ -7,12 +7,11 @@ import './pages/Egresos.css'
 import Login from './pages/auth/Login'
 import Register from './pages/auth/Register'
 import Home from './pages/Home'
-import './pages/Home.css';
-import Egresos from './pages/Egresos'
+import './pages/Home.css'
 
 let router = createBrowserRouter([
   {
-    path: '/',
+    path: '/Home',
     element: <Home />
   },
   {
@@ -26,8 +25,6 @@ let router = createBrowserRouter([
   }
 
 ])
-
-
 
 
 createRoot(document.getElementById('root')).render(
