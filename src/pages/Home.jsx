@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom'; 
+import { Link } from 'react-router-dom';
 import './Home.css';
 
 const Home = () => {
@@ -19,16 +19,27 @@ const Home = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log('Factura registrada:', factura);
-        alert('Factura registrada con éxito');
+    };
+
+    const handleLogout = () => {
+        console.log('Cierre de sesión realizado');
     };
 
     return (
         <div className="factura-pro">
+            {/* Ícono de cierre de sesión */}
+            <div className="logout-icon" onClick={handleLogout}>
+                <img src="public/img/Cierre.png" alt="Cerrar sesión" />
+            </div>
+
             <aside className="sidebar">
                 <section className="admin-icon">
-                    <img src="public\img\loginPro.jpeg" alt="Profile Icon" className="login" />
+                    <img src="public/img/loginPro.jpeg" alt="Profile Icon" className="login" />
                 </section>
                 <p>Administrador</p>
+                <br />
+                <br />
+                <br />
                 <nav>
                     <ul>
                         <li>

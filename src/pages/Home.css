@@ -13,12 +13,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: fixed; 
+    position: fixed;
     height: 100%;
 }
 
 .main-content {
-    margin-left: 250px; 
+    margin-left: 250px;
     flex-grow: 1;
     padding: 20px;
     background-color: #f2f2f2;
@@ -38,32 +38,36 @@
 }
 
 .sidebar nav ul {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
     width: 100%;
 }
 
-.sidebar nav ul li {
+.sidebar nav ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    width: 100%;
     padding: 15px;
-    text-align: center;
-    border-bottom: 1px solid white;
-    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-.sidebar nav ul li:hover {
+.sidebar nav ul li a:hover {
+    color: #d1d1d1;
     background-color: #003580;
 }
 
 h1 {
     color: #003366;
     font-size: 36px;
+    margin-bottom: 20px;
 }
 
 .form-container {
     background-color: white;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
@@ -82,32 +86,42 @@ input {
     margin-bottom: 20px;
     border-radius: 5px;
     border: 1px solid #ccc;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-color: #007bff;
+    outline: none;
 }
 
 .button-group {
     display: flex;
     justify-content: space-between;
+    gap: 10px; 
+}
+
+.register-btn,
+.cancel-btn {
+    flex: 0; 
+    padding: 8px 16px; 
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+    transition: opacity 0.3s;
+    font-size: 14px; 
 }
 
 .register-btn {
-    background-color: #28a745;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    background-color: #03A9F4;
 }
 
 .cancel-btn {
-    background-color: #dc3545;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    background-color: #003366;
 }
 
-.register-btn:hover, .cancel-btn:hover {
+.register-btn:hover,
+.cancel-btn:hover {
     opacity: 0.8;
 }
 
@@ -121,7 +135,7 @@ input {
 
     .sidebar {
         width: 100%;
-        position: static; 
+        position: static;
         height: auto;
     }
 
@@ -142,16 +156,16 @@ input {
         flex-direction: column;
     }
 
-    .register-btn, .cancel-btn {
+    .register-btn,
+    .cancel-btn {
         width: 100%;
-        margin-bottom: 10px;
     }
 }
 
 /* Móviles (hasta 480px) */
 @media (max-width: 480px) {
     .sidebar {
-        display: none; 
+        display: none;
     }
 
     .factura-pro {
@@ -172,11 +186,30 @@ input {
 
     .button-group {
         flex-direction: column;
+        gap: 5px;
     }
 
-    .register-btn, .cancel-btn {
+    .register-btn,
+    .cancel-btn {
         width: 100%;
         padding: 10px;
-        margin-bottom: 10px;
     }
+}
+
+/* Estilos para el ícono de cierre de sesión */
+.logout-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.logout-icon img {
+    width: 30px;
+    height: 30px;
+}
+
+.logout-icon:hover {
+    transform: scale(1.1);
 }
